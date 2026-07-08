@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「好き」を、置き去りにしない経済のつくりかた。| 丸井グループ × Social Act Career 28卒特別企画</title>
+<meta name="description" content="小売×金融で、あなたの“やりたい”を事業にする。丸井グループ × Social Act Career 28卒向け特別企画。2026年8月13日(火)13:00-18:00開催。">
+<style>
+  :root {
+    --red: #d7000f;
+    --red-dark: #a8000c;
+    --yellow: #ffe93c;
+    --ink: #1a1a1a;
+    --gray: #666;
+    --bg-soft: #faf7f4;
+    --pink-soft: #fdf0f1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    color: var(--ink);
+    line-height: 1.8;
+    background: #fff;
+  }
+  img { max-width: 100%; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .t-hl {
+    background: linear-gradient(transparent 60%, var(--yellow) 60%);
+    font-weight: 800;
+    padding: 0 2px;
+  }
+
+  /* ===== Header ===== */
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #eee;
+  }
+  .site-header .container {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 14px; }
+  .badge-28 {
+    background: var(--red); color: #fff;
+    border-radius: 999px; padding: 2px 12px;
+    font-size: 12px; font-weight: 700; white-space: nowrap;
+  }
+  .header-cta {
+    background: var(--red); color: #fff; text-decoration: none;
+    padding: 8px 20px; border-radius: 999px;
+    font-size: 13px; font-weight: 700;
+    white-space: nowrap; flex-shrink: 0;
+    transition: background .2s;
+  }
+  .header-cta:hover { background: var(--red-dark); }
+
+  /* ===== Hero ===== */
+  .hero {
+    background: linear-gradient(160deg, #fff 55%, var(--pink-soft) 100%);
+    padding: 72px 0 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; right: -120px; top: -120px;
+    width: 380px; height: 380px; border-radius: 50%;
+    background: var(--pink-soft);
+    z-index: 0;
+  }
+  .hero .container { position: relative; z-index: 1; }
+  .hero-date {
+    display: inline-flex; align-items: center; gap: 12px;
+    color: var(--red); font-weight: 700; font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .hero-date .day { font-size: 26px; letter-spacing: .02em; }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900; line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .hero h1 .marker {
+    background: linear-gradient(transparent 55%, var(--yellow) 55%);
+    padding: 0 4px;
+  }
+  .hero-sub {
+    font-size: clamp(15px, 2.2vw, 19px);
+    color: var(--gray); font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .hero-lead {
+    font-size: 14.5px; color: #333;
+    border-left: 3px solid var(--red);
+    padding-left: 14px;
+    margin-bottom: 36px;
+    max-width: 620px;
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px;
+  }
+  .meta-chip {
+    background: #fff; border: 1.5px solid var(--red);
+    color: var(--red); font-weight: 700; font-size: 13px;
+    border-radius: 999px; padding: 6px 18px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--red); color: #fff; text-decoration: none;
+    font-size: 18px; font-weight: 800;
+    padding: 18px 56px; border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(215,0,15,.3);
+    transition: transform .15s, box-shadow .15s, background .2s;
+  }
+  .cta-btn:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(215,0,15,.35);
+  }
+  .cta-note { font-size: 12px; color: var(--gray); margin-top: 12px; }
+
+  /* ===== Section base ===== */
+  section { padding: 80px 0; }
+  .section-label {
+    color: var(--red); font-weight: 800; font-size: 13px;
+    letter-spacing: .18em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: clamp(22px, 3.6vw, 32px);
+    font-weight: 900; margin-bottom: 40px; line-height: 1.5;
+  }
+
+  /* ===== Why ===== */
+  .why .container { max-width: 800px; }
+  .why-prose p { margin-bottom: 22px; font-size: 15.5px; }
+  .why-voices {
+    background: var(--bg-soft);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-bottom: 22px;
+  }
+  .why-voices p {
+    margin-bottom: 8px;
+    color: #444; font-weight: 600; font-size: 15px;
+  }
+  .why-voices p:last-child { margin-bottom: 0; }
+  .why-vs {
+    font-weight: 800; font-size: clamp(16px, 2.6vw, 20px);
+    letter-spacing: .02em;
+  }
+  .why-vs .or {
+    color: var(--red); font-size: 1.25em;
+    padding: 0 2px;
+  }
+  .why-prose .em-red { color: var(--red); font-weight: 800; }
+  .why-close { font-weight: 700; }
+
+  /* ===== Strengths (Why Marui) ===== */
+  .strengths { background: var(--bg-soft); }
+  .strength-list { display: grid; gap: 20px; }
+  .strength-card {
+    background: #fff; border-radius: 16px;
+    padding: 30px 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .strength-num {
+    font-size: 40px; font-weight: 900;
+    color: var(--red);
+    line-height: 1.1;
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: .02em;
+  }
+  .strength-num small {
+    display: block;
+    font-family: inherit;
+    font-size: 10px; font-weight: 700;
+    color: var(--gray); letter-spacing: .18em;
+  }
+  .strength-body h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; line-height: 1.5; }
+  .strength-body p { font-size: 14.5px; color: #333; }
+
+  /* ===== Takeaways ===== */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+  .about-card {
+    border: 1px solid #eee; border-radius: 16px;
+    padding: 28px;
+    background: #fff;
+  }
+  .about-card h3 {
+    color: var(--red); font-size: 16px; font-weight: 800;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .about-card p { font-size: 14.5px; color: #333; }
+
+  /* ===== For You ===== */
+  .foryou { background: var(--bg-soft); }
+  .check-list { list-style: none; display: grid; gap: 14px; }
+  .check-list li {
+    background: #fff; border-radius: 14px;
+    padding: 20px 24px 20px 58px;
+    position: relative;
+    font-weight: 600; font-size: 15.5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.04);
+  }
+  .check-list li::before {
+    content: "✓";
+    position: absolute; left: 20px; top: 50%;
+    transform: translateY(-50%);
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--red); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 900;
+    line-height: 1;
+  }
+  .check-list .em { color: var(--red); font-weight: 800; }
+  .check-list .hl {
+    background: linear-gradient(transparent 60%, var(--yellow) 60%);
+    font-weight: 800;
+  }
+
+  /* ===== Timetable ===== */
+  .timetable { display: grid; gap: 0; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 3px 16px rgba(0,0,0,.07); border: 1px solid #f0f0f0; }
+  .tt-row {
+    display: grid; grid-template-columns: 150px 1fr;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20px 28px;
+    align-items: baseline;
+  }
+  .tt-row:last-child { border-bottom: none; }
+  .tt-row.break { background: #fafafa; }
+  .tt-time { color: var(--red); font-weight: 800; font-size: 14.5px; letter-spacing: .02em; }
+  .tt-body h3 { font-size: 16px; font-weight: 800; }
+  .tt-body p { font-size: 13.5px; color: var(--gray); margin-top: 4px; }
+
+  .oneonone {
+    margin-top: 28px;
+    background: var(--pink-soft);
+    border: 1px solid #f6d5d8;
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .oneonone h3 { color: var(--red); font-size: 16px; font-weight: 800; margin-bottom: 14px; }
+  .oneonone-item { display: flex; gap: 10px; margin-bottom: 10px; font-size: 14.5px; }
+  .oneonone-item:last-child { margin-bottom: 0; }
+  .oneonone-item .icon { flex-shrink: 0; }
+  .oneonone-item b { font-weight: 800; }
+
+  /* ===== Outline ===== */
+  .outline { background: var(--bg-soft); }
+  .outline-table { width: 100%; border-collapse: collapse; }
+  .outline-table th, .outline-table td {
+    text-align: left; padding: 18px 12px;
+    border-bottom: 1px solid #e8e2dc;
+    font-size: 15px; vertical-align: top;
+  }
+  .outline-table th {
+    width: 140px; color: var(--red); font-weight: 800;
+    white-space: nowrap;
+  }
+
+  /* ===== Bottom CTA ===== */
+  .bottom-cta {
+    background: var(--red);
+    color: #fff; text-align: center;
+    padding: 88px 0;
+  }
+  .bottom-cta h2 {
+    font-size: clamp(22px, 3.8vw, 34px);
+    font-weight: 900; line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .bottom-cta p { opacity: .9; margin-bottom: 36px; font-size: 15px; }
+  .cta-btn-white {
+    display: inline-block;
+    background: #fff; color: var(--red); text-decoration: none;
+    font-size: 18px; font-weight: 800;
+    padding: 18px 56px; border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    transition: transform .15s;
+  }
+  .cta-btn-white:hover { transform: translateY(-2px); }
+  .bottom-cta .cta-note { color: rgba(255,255,255,.85); }
+
+  /* ===== Footer ===== */
+  .site-footer {
+    padding: 28px 0; text-align: center;
+    font-size: 12px; color: var(--gray);
+    border-top: 1px solid #eee;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 720px) {
+    section { padding: 56px 0; }
+    .hero { padding: 48px 0 44px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .tt-row { grid-template-columns: 1fr; gap: 4px; padding: 16px 20px; }
+    .site-header .container { gap: 10px; }
+    .brand .brand-text { font-size: 11px; line-height: 1.4; }
+    .badge-28 { font-size: 11px; padding: 2px 10px; }
+    .hero-date { flex-wrap: wrap; row-gap: 0; }
+    .hero-date .day { font-size: 21px; white-space: nowrap; }
+    .strength-card { grid-template-columns: 1fr; gap: 8px; padding: 24px; }
+    .section-title br { display: none; }
+    .cta-btn, .cta-btn-white { display: block; text-align: center; padding: 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <span class="badge-28">28卒</span>
+      <span class="brand-text">丸井グループ × Social Act Career│特別企画</span>
+    </div>
+    <a href="#entry" class="header-cta">参加申込</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-date">
+      <span class="day">2026.8.13 (火)</span>
+      <span>13:00 – 18:00</span>
+    </div>
+    <h1>
+      <span class="marker">「好き」を、置き去りにしない</span><br>
+      経済のつくりかた。
+    </h1>
+    <p class="hero-sub">― 小売 × 金融で、あなたの“やりたい”を事業にする ―</p>
+    <p class="hero-lead">「一人ひとりの『好き』が駆動する経済を創る」――<br>それを本気でインパクト目標に掲げる会社と、あなたの“やりたい”の話をしませんか。</p>
+    <div class="hero-meta">
+      <span class="meta-chip">28卒対象</span>
+      <span class="meta-chip">参加無料</span>
+      <span class="meta-chip">懇親会あり</span>
+      <span class="meta-chip">社員と1on1</span>
+    </div>
+    <a href="#entry" class="cta-btn">参加を申し込む</a>
+    <p class="cta-note">※ 定員に達し次第、受付を終了します</p>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+    <p class="section-label">Why</p>
+    <h2 class="section-title">「好き」と「仕事」を、<br>天秤にかけない。</h2>
+    <div class="why-prose">
+      <p>就活が始まると、多くの人がこう考え始めます。</p>
+      <div class="why-voices">
+        <p>「やりたいことはある。でも、それで食べていけるのか」</p>
+        <p>「社会に良いことがしたい。でも、安定も捨てたくない」</p>
+        <p>「好きなことは、趣味にとっておいた方がいいのかもしれない」</p>
+      </div>
+      <p class="why-vs">――やりたいこと<span class="or">か</span>安定。社会貢献<span class="or">か</span>利益。好き<span class="or">か</span>仕事。</p>
+      <p>私たちは、この<span class="em-red">「か」</span>に疑問を持っています。</p>
+      <p>丸井グループは<b>「あらゆる二項対立を乗り越える」</b>を掲げ、インパクトと収益の<b>両立</b>を経営の真ん中に置いてきた会社です。その丸井が掲げるインパクト目標のひとつが、<span class="t-hl">「一人ひとりの『好き』が駆動する経済を創る」</span>。</p>
+      <p>つまり、「好き」を置き去りにしないことは、この会社にとってきれいごとではなく、<span class="t-hl">事業戦略そのもの</span>です。</p>
+      <p class="why-close">このイベントは、そんな丸井のリアルを知り、あなたの「やりたい」を事業の言葉に翻訳してみる5時間です。</p>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="container">
+    <p class="section-label">Why Marui</p>
+    <h2 class="section-title">「好き」を事業にできる会社には、<br>理由がある。</h2>
+    <div class="strength-list">
+      <div class="strength-card">
+        <div class="strength-num"><small>STRENGTH</small>01</div>
+        <div class="strength-body">
+          <h3>小売 × 金融、独自のビジネスモデル</h3>
+          <p>丸井は「マルイの店舗を持つ小売の会社」であると同時に、エポスカードを軸としたフィンテックの会社でもあります。店舗という「リアルな接点」と、金融という「継続的な応援のしくみ」。この2つを両方持っているからこそ、誰かの「好き」や「やりたい」を一過性のイベントで終わらせず、事業として続く形にできます。</p>
+        </div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-num"><small>STRENGTH</small>02</div>
+        <div class="strength-body">
+          <h3>「手挙げの文化」― やりたい人が、やる。</h3>
+          <p>丸井には、新規事業や社内プロジェクトに自ら手を挙げて参加する文化が根づいています。10年以上かけて育ててきたこの文化のもとでは、配属や指示を待つのではなく、「やりたい」と言った人にチャンスが回ってくる。「会社に入る」より「会社を使って何かやる」――それが実際に起こる環境です。</p>
+        </div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-num"><small>STRENGTH</small>03</div>
+        <div class="strength-body">
+          <h3>インパクトを「本業」でやる</h3>
+          <p>丸井は、社会へのインパクトをCSR(本業の外での社会貢献)ではなく、収益と両立させるべき経営目標として掲げ、進捗を開示しています。「利益も大事。でも社会が良くなるかも本気で気にしたい」――その“欲張り”を、会社ぐるみでやっているのが丸井グループです。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="takeaways">
+  <div class="container">
+    <p class="section-label">Takeaways</p>
+    <h2 class="section-title">この5時間で、持ち帰れるもの。</h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>💡 「好き→事業」の翻訳のしかた</h3>
+        <p>「好き」を事業にするとは、具体的にどういうことか。小売×金融×社会課題を掛け算してきた丸井の実例から、“想い”を“ビジネス”に変えるプロセスを学べます。</p>
+      </div>
+      <div class="about-card">
+        <h3>🗣 現場社員の本音</h3>
+        <p>説明会では聞けない、意思決定の裏側や失敗談まで。1on1だから聞ける、働く人のリアルな温度感を持ち帰ってください。</p>
+      </div>
+      <div class="about-card">
+        <h3>🔥 あなたの「やりたい」へのフィードバック</h3>
+        <p>やりたいことがある人は、社員に直接プレゼンできます(30分×2名)。事業をつくってきた大人からの本気のフィードバックは、就活だけでなく、この先の人生の解像度を上げてくれるはずです。</p>
+      </div>
+      <div class="about-card">
+        <h3>🤝 同じ“欲張り”な仲間</h3>
+        <p>「安定も挑戦も欲しい」「利益も社会も諦めたくない」――そんな同世代との出会いも、このイベントの価値のひとつです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="foryou">
+  <div class="container">
+    <p class="section-label">For You</p>
+    <h2 class="section-title">こんな人に、来てほしい。</h2>
+    <ul class="check-list">
+      <li><span class="em">「やりたいこと」がある。</span>でも、それを叶える場所をまだ見つけられていない人</li>
+      <li>大企業の安定も、挑戦も、どっちも欲しいという欲張りな人</li>
+      <li>「会社に入る」より「会社を使って何かやる」側に回りたい人</li>
+      <li>利益も大事。でも<span class="hl">“社会が良くなるか”を本気で気にしてしまう</span>人</li>
+      <li>自分の<span class="em">「好き」やこだわり</span>を、仕事に持ち込みたい人</li>
+    </ul>
+  </div>
+</section>
+
+<section class="timetable-sec">
+  <div class="container">
+    <p class="section-label">Timetable</p>
+    <h2 class="section-title">当日のタイムスケジュール</h2>
+    <div class="timetable">
+      <div class="tt-row">
+        <div class="tt-time">13:00 – 13:15</div>
+        <div class="tt-body"><h3>受付・オープニング</h3></div>
+      </div>
+      <div class="tt-row">
+        <div class="tt-time">13:15 – 15:45</div>
+        <div class="tt-body">
+          <h3>企業インプット</h3>
+          <p>丸井のリアルを知る(小売×金融×社会課題/手挙げの文化) ※途中、小休憩あり</p>
+        </div>
+      </div>
+      <div class="tt-row break">
+        <div class="tt-time">15:45 – 15:55</div>
+        <div class="tt-body"><h3>休憩</h3></div>
+      </div>
+      <div class="tt-row">
+        <div class="tt-time">15:55 – 16:55</div>
+        <div class="tt-body">
+          <h3>1on1セッション</h3>
+          <p>社員と本音で語る時間。あなたのスタンスに合わせて選べます。</p>
+        </div>
+      </div>
+      <div class="tt-row break">
+        <div class="tt-time">16:55 – 17:00</div>
+        <div class="tt-body"><h3>休憩</h3></div>
+      </div>
+      <div class="tt-row">
+        <div class="tt-time">17:00 – 18:00</div>
+        <div class="tt-body"><h3>懇親会</h3></div>
+      </div>
+    </div>
+
+    <div class="oneonone">
+      <h3>1on1セッションの2つの過ごし方</h3>
+      <div class="oneonone-item">
+        <span class="icon">🔥</span>
+        <span><b>やりたいことプレゼン</b>:やりたいことがある学生が社員にプレゼン(30分 × 2名)</span>
+      </div>
+      <div class="oneonone-item">
+        <span class="icon">💬</span>
+        <span><b>社員と1on1トーク</b>:文化が合いそうな学生が社員と対話(20分 × 3名)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="outline">
+  <div class="container">
+    <p class="section-label">Outline</p>
+    <h2 class="section-title">開催概要</h2>
+    <table class="outline-table">
+      <tr><th>イベント名</th><td>「好き」を、置き去りにしない経済のつくりかた。<br>― 小売 × 金融で、あなたの“やりたい”を事業にする ―</td></tr>
+      <tr><th>主催</th><td>丸井グループ × Social Act Career│28卒向け特別企画</td></tr>
+      <tr><th>日時</th><td>2026年8月13日(火)13:00 – 18:00</td></tr>
+      <tr><th>対象</th><td>2028年卒業予定の学生</td></tr>
+      <tr><th>会場</th><td>調整中(お申し込みいただいた方にご案内します)</td></tr>
+      <tr><th>参加費</th><td>無料</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="bottom-cta" id="entry">
+  <div class="container">
+    <h2>「いつかやりたい」を、<br>「ここでやる」に変えに来ませんか。</h2>
+    <p>社員と本音で話せる、28卒向けの特別企画。<br>「好き」を置き去りにしない働き方を、一度覗いてみてください。</p>
+    <a href="#" class="cta-btn-white">参加を申し込む</a>
+    <p class="cta-note">※ 申込フォームのURLは確定後に差し替えてください</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    丸井グループ × Social Act Career│28卒向け特別企画
+  </div>
+</footer>
+
+</body>
+</html>
