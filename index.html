@@ -229,32 +229,63 @@
     font-weight: 800;
   }
 
-  /* ===== Timetable ===== */
-  .timetable { display: grid; gap: 0; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 3px 16px rgba(0,0,0,.07); border: 1px solid #f0f0f0; }
-  .tt-row {
-    display: grid; grid-template-columns: 150px 1fr;
-    border-bottom: 1px solid #f0f0f0;
-    padding: 20px 28px;
-    align-items: baseline;
+  /* ===== Timetable (3-act timeline) ===== */
+  .timeline { position: relative; max-width: 760px; }
+  .timeline::before {
+    content: "";
+    position: absolute; left: 13px; top: 10px; bottom: 10px;
+    width: 2px; background: #f0d9db;
   }
-  .tt-row:last-child { border-bottom: none; }
-  .tt-row.break { background: #fafafa; }
-  .tt-time { color: var(--red); font-weight: 800; font-size: 14.5px; letter-spacing: .02em; }
-  .tt-body h3 { font-size: 16px; font-weight: 800; }
-  .tt-body p { font-size: 13.5px; color: var(--gray); margin-top: 4px; }
-
-  .oneonone {
-    margin-top: 28px;
+  .tl-item { position: relative; padding-left: 48px; }
+  .tl-item + .tl-item { margin-top: 18px; }
+  .tl-dot {
+    position: absolute; left: 0; top: 2px;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--red); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800;
+    box-shadow: 0 0 0 4px #fff;
+  }
+  .tl-item.minor .tl-dot {
+    width: 12px; height: 12px; left: 8px; top: 7px;
+    background: #e5c1c4;
+  }
+  .tl-item.minor .tl-label {
+    font-size: 13px; color: var(--gray); font-weight: 600;
+  }
+  .tl-item.minor .tl-label b { color: #a89a9b; font-weight: 700; margin-right: 12px; letter-spacing: .02em; }
+  .tl-card {
+    background: #fff; border-radius: 16px;
+    padding: 26px 28px;
+    box-shadow: 0 3px 16px rgba(0,0,0,.06);
+    border: 1px solid #f2e6e0;
+  }
+  .act-head {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    margin-bottom: 12px;
+  }
+  .act-badge {
+    background: var(--red); color: #fff;
+    font-size: 12px; font-weight: 800;
+    border-radius: 999px; padding: 3px 14px;
+    letter-spacing: .06em;
+  }
+  .act-name { font-weight: 900; font-size: 17px; color: var(--red); }
+  .act-time { font-size: 13px; font-weight: 700; color: var(--gray); margin-left: auto; }
+  .tl-card h3 { font-size: clamp(17px, 2.6vw, 21px); font-weight: 900; line-height: 1.5; margin-bottom: 10px; }
+  .tl-card > p { font-size: 14.5px; color: #333; }
+  .tl-note { font-size: 12px; color: var(--gray); margin-top: 8px; }
+  .tl-options { margin-top: 16px; display: grid; gap: 10px; }
+  .tl-option {
     background: var(--pink-soft);
     border: 1px solid #f6d5d8;
-    border-radius: 16px;
-    padding: 28px;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 14px;
+    display: flex; gap: 10px;
   }
-  .oneonone h3 { color: var(--red); font-size: 16px; font-weight: 800; margin-bottom: 14px; }
-  .oneonone-item { display: flex; gap: 10px; margin-bottom: 10px; font-size: 14.5px; }
-  .oneonone-item:last-child { margin-bottom: 0; }
-  .oneonone-item .icon { flex-shrink: 0; }
-  .oneonone-item b { font-weight: 800; }
+  .tl-option .icon { flex-shrink: 0; }
+  .tl-option b { font-weight: 800; }
 
   /* ===== Outline ===== */
   .outline { background: var(--bg-soft); }
@@ -306,7 +337,8 @@
     section { padding: 56px 0; }
     .hero { padding: 48px 0 44px; }
     .about-grid { grid-template-columns: 1fr; }
-    .tt-row { grid-template-columns: 1fr; gap: 4px; padding: 16px 20px; }
+    .tl-card { padding: 20px; }
+    .act-time { margin-left: 0; width: 100%; }
     .site-header .container { gap: 10px; }
     .brand .brand-text { font-size: 11px; line-height: 1.4; }
     .badge-28 { font-size: 11px; padding: 2px 10px; }
@@ -333,7 +365,7 @@
 <section class="hero">
   <div class="container">
     <div class="hero-date">
-      <span class="day">2026.8.13 (火)</span>
+      <span class="day">2026.8.13 (木)</span>
       <span>13:00 – 18:00</span>
     </div>
     <h1>
@@ -445,49 +477,60 @@
 <section class="timetable-sec">
   <div class="container">
     <p class="section-label">Timetable</p>
-    <h2 class="section-title">当日のタイムスケジュール</h2>
-    <div class="timetable">
-      <div class="tt-row">
-        <div class="tt-time">13:00 – 13:15</div>
-        <div class="tt-body"><h3>受付・オープニング</h3></div>
+    <h2 class="section-title">当日は、こんな5時間。</h2>
+    <div class="timeline">
+      <div class="tl-item minor">
+        <span class="tl-dot"></span>
+        <p class="tl-label"><b>13:00 – 13:15</b>受付・オープニング</p>
       </div>
-      <div class="tt-row">
-        <div class="tt-time">13:15 – 15:45</div>
-        <div class="tt-body">
-          <h3>企業インプット</h3>
-          <p>丸井のリアルを知る(小売×金融×社会課題/手挙げの文化) ※途中、小休憩あり</p>
+      <div class="tl-item">
+        <span class="tl-dot">1</span>
+        <div class="tl-card">
+          <div class="act-head">
+            <span class="act-badge">第1部</span>
+            <span class="act-name">知る</span>
+            <span class="act-time">13:15 – 15:45</span>
+          </div>
+          <h3>「好き」を事業にする方法論を、2時間半で。</h3>
+          <p>ただの会社説明ではありません。小売×金融×社会課題を掛け算する丸井の実例と、「手挙げの文化」のリアルを、現場の言葉でインプットします。</p>
+          <p class="tl-note">※ 途中、小休憩あり</p>
         </div>
       </div>
-      <div class="tt-row break">
-        <div class="tt-time">15:45 – 15:55</div>
-        <div class="tt-body"><h3>休憩</h3></div>
+      <div class="tl-item minor">
+        <span class="tl-dot"></span>
+        <p class="tl-label"><b>15:45 – 15:55</b>休憩</p>
       </div>
-      <div class="tt-row">
-        <div class="tt-time">15:55 – 16:55</div>
-        <div class="tt-body">
-          <h3>1on1セッション</h3>
-          <p>社員と本音で語る時間。あなたのスタンスに合わせて選べます。</p>
+      <div class="tl-item">
+        <span class="tl-dot">2</span>
+        <div class="tl-card">
+          <div class="act-head">
+            <span class="act-badge">第2部</span>
+            <span class="act-name">話す</span>
+            <span class="act-time">15:55 – 16:55</span>
+          </div>
+          <h3>この日の主役は、あなたの「やりたい」。</h3>
+          <p>社員と本音で語る1時間。あなたのスタンスに合わせて、2つの過ごし方から選べます。</p>
+          <div class="tl-options">
+            <div class="tl-option"><span class="icon">🔥</span><span><b>やりたいことプレゼン</b>:やりたいことがある学生が社員にプレゼン(30分 × 2名)</span></div>
+            <div class="tl-option"><span class="icon">💬</span><span><b>社員と1on1トーク</b>:文化が合いそうな学生が社員と対話(20分 × 3名)</span></div>
+          </div>
         </div>
       </div>
-      <div class="tt-row break">
-        <div class="tt-time">16:55 – 17:00</div>
-        <div class="tt-body"><h3>休憩</h3></div>
+      <div class="tl-item minor">
+        <span class="tl-dot"></span>
+        <p class="tl-label"><b>16:55 – 17:00</b>休憩</p>
       </div>
-      <div class="tt-row">
-        <div class="tt-time">17:00 – 18:00</div>
-        <div class="tt-body"><h3>懇親会</h3></div>
-      </div>
-    </div>
-
-    <div class="oneonone">
-      <h3>1on1セッションの2つの過ごし方</h3>
-      <div class="oneonone-item">
-        <span class="icon">🔥</span>
-        <span><b>やりたいことプレゼン</b>:やりたいことがある学生が社員にプレゼン(30分 × 2名)</span>
-      </div>
-      <div class="oneonone-item">
-        <span class="icon">💬</span>
-        <span><b>社員と1on1トーク</b>:文化が合いそうな学生が社員と対話(20分 × 3名)</span>
+      <div class="tl-item">
+        <span class="tl-dot">3</span>
+        <div class="tl-card">
+          <div class="act-head">
+            <span class="act-badge">第3部</span>
+            <span class="act-name">つながる</span>
+            <span class="act-time">17:00 – 18:00</span>
+          </div>
+          <h3>肩書きなしで、乾杯。</h3>
+          <p>社員とも、同じ“欲張り”な同世代とも。懇親会で生まれる縁が、一番の持ち帰りかもしれません。</p>
+        </div>
       </div>
     </div>
   </div>
@@ -500,7 +543,7 @@
     <table class="outline-table">
       <tr><th>イベント名</th><td>「好き」を、置き去りにしない経済のつくりかた。<br>― 小売 × 金融で、あなたの“やりたい”を事業にする ―</td></tr>
       <tr><th>主催</th><td>丸井グループ × Social Act Career│28卒向け特別企画</td></tr>
-      <tr><th>日時</th><td>2026年8月13日(火)13:00 – 18:00</td></tr>
+      <tr><th>日時</th><td>2026年8月13日(木)13:00 – 18:00</td></tr>
       <tr><th>対象</th><td>2028年卒業予定の学生</td></tr>
       <tr><th>会場</th><td>丸井グループ本社<br>
         住所:東京都中野区中野4丁目3-2(<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E4%B8%AD%E9%87%8E%E5%8C%BA%E4%B8%AD%E9%87%8E4%E4%B8%81%E7%9B%AE3-2+%E4%B8%B8%E4%BA%95%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E6%9C%AC%E7%A4%BE" target="_blank" rel="noopener">地図を開く</a>)<br>
