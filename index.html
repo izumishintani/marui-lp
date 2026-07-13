@@ -286,6 +286,16 @@
   }
   .tl-option .icon { flex-shrink: 0; }
   .tl-option b { font-weight: 800; }
+  .tl-option-slot {
+    display: inline-block;
+    background: #fff; color: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 999px;
+    font-size: 11px; font-weight: 800;
+    padding: 1px 10px; margin-left: 8px;
+    vertical-align: 1px;
+    white-space: nowrap;
+  }
 
   /* ===== Outline ===== */
   .outline { background: var(--bg-soft); }
@@ -511,8 +521,8 @@
           <h3>この日の主役は、あなたの「やりたい」。</h3>
           <p>社員と本音で語る1時間。あなたのスタンスに合わせて、2つの過ごし方から選べます。</p>
           <div class="tl-options">
-            <div class="tl-option"><span class="icon">🔥</span><span><b>やりたいことプレゼン</b>:やりたいことがある学生が社員にプレゼン(30分 × 2名)</span></div>
-            <div class="tl-option"><span class="icon">💬</span><span><b>社員と1on1トーク</b>:文化が合いそうな学生が社員と対話(20分 × 3名)</span></div>
+            <div class="tl-option"><span class="icon">🔥</span><span><b>やりたいことプレゼン</b><span class="tl-option-slot">30分 × 限定2名</span><br>あなたの「やりたい」に、事業のプロが本気で向き合う30分。プレゼンには、その場でガチのフィードバックが返ってきます。</span></div>
+            <div class="tl-option"><span class="icon">💬</span><span><b>社員と1on1トーク</b><span class="tl-option-slot">20分 × 3名</span><br>説明会では聞けない話を、独り占めできる20分。キャリアの迷いも、ぶっちゃけた質問も、全部ぶつけてください。</span></div>
           </div>
         </div>
       </div>
