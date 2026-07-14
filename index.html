@@ -297,6 +297,35 @@
     white-space: nowrap;
   }
 
+  /* ===== Perks ===== */
+  .perks { background: var(--pink-soft); }
+  .perk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .perk-card {
+    background: #fff; border-radius: 16px;
+    padding: 26px 24px;
+    box-shadow: 0 3px 14px rgba(215,0,15,.07);
+  }
+  .perk-icon { font-size: 30px; display: block; margin-bottom: 10px; }
+  .perk-card h3 { font-size: 16.5px; font-weight: 800; margin-bottom: 8px; line-height: 1.5; }
+  .perk-card p { font-size: 14px; color: #333; }
+  .reassure {
+    margin-top: 28px;
+    background: #fff;
+    border: 1.5px dashed var(--red);
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+  .reassure h3 { color: var(--red); font-size: 15.5px; font-weight: 800; margin-bottom: 12px; }
+  .reassure ul { list-style: none; display: grid; gap: 8px; }
+  .reassure li {
+    font-size: 14.5px; font-weight: 600;
+    padding-left: 26px; position: relative;
+  }
+  .reassure li::before {
+    content: "◎"; color: var(--red);
+    position: absolute; left: 0; font-weight: 800;
+  }
+
   /* ===== Outline ===== */
   .outline { background: var(--bg-soft); }
   .outline-table { width: 100%; border-collapse: collapse; }
@@ -349,6 +378,7 @@
     .about-grid { grid-template-columns: 1fr; }
     .tl-card { padding: 20px; }
     .act-time { margin-left: 0; width: 100%; }
+    .perk-grid { grid-template-columns: 1fr; }
     .site-header .container { gap: 10px; }
     .brand .brand-text { font-size: 11px; line-height: 1.4; }
     .badge-28 { font-size: 11px; padding: 2px 10px; }
@@ -387,7 +417,9 @@
     <div class="hero-meta">
       <span class="meta-chip">28卒対象</span>
       <span class="meta-chip">参加無料</span>
-      <span class="meta-chip">懇親会あり</span>
+      <span class="meta-chip">選考なし</span>
+      <span class="meta-chip">私服OK・手ぶらOK</span>
+      <span class="meta-chip">軽食付き懇親会</span>
       <span class="meta-chip">社員と1on1</span>
     </div>
     <a href="https://forms.gle/i9szjY8dNrnpojma7" target="_blank" rel="noopener" class="cta-btn">参加を申し込む</a>
@@ -539,9 +571,41 @@
             <span class="act-time">17:00 – 18:00</span>
           </div>
           <h3>肩書きなしで、乾杯。</h3>
-          <p>社員とも、同じ“欲張り”な同世代とも。懇親会で生まれる縁が、一番の持ち帰りかもしれません。</p>
+          <p>軽食とドリンクを片手に、社員とも、同じ“欲張り”な同世代とも。懇親会で生まれる縁が、一番の持ち帰りかもしれません。</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="perks">
+  <div class="container">
+    <p class="section-label">Perks</p>
+    <h2 class="section-title">参加者だけの、うれしい特典。</h2>
+    <div class="perk-grid">
+      <div class="perk-card">
+        <span class="perk-icon">🎟</span>
+        <h3>次回企画への優先招待</h3>
+        <p>今回だけで終わりません。参加者限定で、次回の特別企画やオフィス見学に優先的にご案内します。</p>
+      </div>
+      <div class="perk-card">
+        <span class="perk-icon">🏢</span>
+        <h3>本社オフィスツアー</h3>
+        <p>会場は丸井グループ本社。「手挙げの文化」が生まれる現場の空気を、当日そのまま体感できます。</p>
+      </div>
+      <div class="perk-card">
+        <span class="perk-icon">🥂</span>
+        <h3>懇親会は軽食・ドリンク付き</h3>
+        <p>夕方の開催なので、軽食とドリンクをご用意しています。もちろん、参加費は無料のままです。</p>
+      </div>
+    </div>
+    <div class="reassure">
+      <h3>安心して、気軽に来てください</h3>
+      <ul>
+        <li>服装自由(私服OK)・手ぶらOK</li>
+        <li>選考とは一切関係ありません。評価されに来る場ではなく、話しに来る場です</li>
+        <li>授業やゼミと重なる場合は、遅刻・途中参加もご相談ください</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -559,7 +623,9 @@
         住所:東京都中野区中野4丁目3-2(<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E4%B8%AD%E9%87%8E%E5%8C%BA%E4%B8%AD%E9%87%8E4%E4%B8%81%E7%9B%AE3-2+%E4%B8%B8%E4%BA%95%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E6%9C%AC%E7%A4%BE" target="_blank" rel="noopener">地図を開く</a>)<br>
         最寄駅:中野駅から徒歩約7分<br>
         <small>※オフィスの入り方や、より詳細の会場は申込者に共有いたします。</small></td></tr>
-      <tr><th>参加費</th><td>無料</td></tr>
+      <tr><th>参加費</th><td>無料(懇親会の軽食・ドリンク込み)</td></tr>
+      <tr><th>服装・持ち物</th><td>服装自由(私服OK)・手ぶらOK</td></tr>
+      <tr><th>備考</th><td>選考とは一切関係ありません。<br>授業やゼミと重なる場合は、遅刻・途中参加もご相談ください。</td></tr>
     </table>
   </div>
 </section>
