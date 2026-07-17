@@ -198,7 +198,24 @@
   .strength-body h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; line-height: 1.5; }
   .strength-body p { font-size: 14.5px; color: #333; }
 
+  /* ===== Cases ===== */
+  .cases-intro { font-size: 15px; margin: -24px 0 32px; max-width: 720px; }
+  .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .case-card {
+    border: 1px solid #eee; border-radius: 16px;
+    padding: 26px 24px; background: #fff;
+  }
+  .case-icon { font-size: 28px; display: block; margin-bottom: 10px; }
+  .case-card h3 { font-size: 16.5px; font-weight: 800; margin-bottom: 2px; }
+  .case-tag {
+    font-size: 11.5px; color: var(--red); font-weight: 800;
+    letter-spacing: .06em; display: block; margin-bottom: 10px;
+  }
+  .case-card p { font-size: 14px; color: #333; }
+  .cases-note { font-size: 12px; color: var(--gray); margin-top: 18px; }
+
   /* ===== Takeaways ===== */
+  .takeaways { background: var(--bg-soft); }
   .about-grid {
     display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
   }
@@ -215,13 +232,13 @@
   .about-card p { font-size: 14.5px; color: #333; }
 
   /* ===== For You ===== */
-  .foryou { background: var(--bg-soft); }
   .check-list { list-style: none; display: grid; gap: 14px; }
   .check-list li {
     background: #fff; border-radius: 14px;
     padding: 20px 24px 20px 58px;
     position: relative;
     font-weight: 600; font-size: 15.5px;
+    border: 1px solid #f2ece6;
     box-shadow: 0 2px 10px rgba(0,0,0,.04);
   }
   .check-list li::before {
@@ -241,6 +258,7 @@
   }
 
   /* ===== Timetable (3-act timeline) ===== */
+  .timetable-sec { background: var(--bg-soft); }
   .timeline { position: relative; max-width: 760px; }
   .timeline::before {
     content: "";
@@ -337,8 +355,60 @@
     position: absolute; left: 0; font-weight: 800;
   }
 
+  /* ===== Flow ===== */
+  .flow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .flow-card {
+    background: #fff; border: 1px solid #f0e6e0; border-radius: 16px;
+    padding: 26px 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.04);
+  }
+  .flow-step {
+    display: inline-block;
+    background: var(--red); color: #fff;
+    font-weight: 800; font-size: 12px;
+    border-radius: 999px; padding: 2px 14px;
+    margin-bottom: 12px; letter-spacing: .1em;
+  }
+  .flow-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+  .flow-card p { font-size: 13.5px; color: #333; }
+
+  /* ===== FAQ ===== */
+  .faq { background: var(--bg-soft); }
+  .faq-list { display: grid; gap: 12px; max-width: 860px; }
+  .faq-item {
+    background: #fff; border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.04);
+    overflow: hidden;
+  }
+  .faq-item summary {
+    list-style: none; cursor: pointer;
+    padding: 18px 22px;
+    font-weight: 800; font-size: 15px;
+    display: flex; gap: 12px; align-items: baseline;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-q { color: var(--red); font-weight: 900; flex-shrink: 0; }
+  .faq-item summary::after {
+    content: "+"; margin-left: auto;
+    color: var(--red); font-weight: 800; font-size: 18px;
+    flex-shrink: 0;
+  }
+  .faq-item[open] summary::after { content: "−"; }
+  .faq-a { padding: 0 22px 18px 51px; font-size: 14.5px; color: #333; }
+
+  /* ===== Host ===== */
+  .host { background: var(--bg-soft); }
+  .host-card {
+    background: #fff; border-radius: 16px;
+    padding: 30px 32px; max-width: 860px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.04);
+  }
+  .host-card h3 { font-size: 18px; font-weight: 900; margin-bottom: 10px; }
+  .host-card p { font-size: 14.5px; color: #333; margin-bottom: 14px; }
+  .host-card a { color: var(--red); font-weight: 800; font-size: 14px; text-decoration: none; }
+  .host-card a:hover { text-decoration: underline; }
+
   /* ===== Outline ===== */
-  .outline { background: var(--bg-soft); }
   .outline-table { width: 100%; border-collapse: collapse; }
   .outline-table th, .outline-table td {
     text-align: left; padding: 18px 12px;
@@ -390,6 +460,8 @@
     .tl-card { padding: 20px; }
     .act-time { margin-left: 0; width: 100%; }
     .perk-grid { grid-template-columns: 1fr; }
+    .case-grid, .flow-grid { grid-template-columns: 1fr; }
+    .cases-intro { margin-top: -16px; }
     .site-header .container { gap: 10px; }
     .brand .brand-text { font-size: 11px; line-height: 1.4; }
     .badge-28 { font-size: 11px; padding: 2px 10px; }
@@ -486,6 +558,35 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="cases">
+  <div class="container">
+    <p class="section-label">Cases</p>
+    <h2 class="section-title">丸井グループで、実際に生まれた事業。</h2>
+    <p class="cases-intro">「大企業の中で事業を立ち上げる」は、絵空事ではありません。小売×金融の基盤の上で、丸井グループにはこんな新しい事業が生まれています。</p>
+    <div class="case-grid">
+      <div class="case-card">
+        <span class="case-icon">📈</span>
+        <h3>tsumiki証券</h3>
+        <span class="case-tag">金融 × 初心者の一歩</span>
+        <p>エポスカードで、100円からつみたて投資ができる証券会社。「投資はこわい」という人の最初の一歩に寄り添う、丸井グループ発の金融サービスです。</p>
+      </div>
+      <div class="case-card">
+        <span class="case-icon">🎬</span>
+        <h3>アニメ事業</h3>
+        <span class="case-tag">「好き」× エンタメ</span>
+        <p>アニメコラボのエポスカードやイベントなど、ファンの「推し」への想いを起点にした事業。「好きが駆動する経済」を体現する領域です。</p>
+      </div>
+      <div class="case-card">
+        <span class="case-icon">🏬</span>
+        <h3>売らないお店・D2C支援</h3>
+        <span class="case-tag">小売の再発明</span>
+        <p>店舗を「モノを売る場所」から「ブランドとファンが出会う場所」へ。D2C支援の新会社「D2C&amp;Co.」を設立するなど、小売の形そのものを作り変えています。</p>
+      </div>
+    </div>
+    <p class="cases-note">※ 各事業の内容は公開情報に基づく紹介です。こうした事業が「どう生まれたのか」は、当日の企業インプットで深掘りします。</p>
   </div>
 </section>
 
@@ -623,6 +724,63 @@
   </div>
 </section>
 
+<section class="flow">
+  <div class="container">
+    <p class="section-label">Entry</p>
+    <h2 class="section-title">参加までは、3ステップ。</h2>
+    <div class="flow-grid">
+      <div class="flow-card">
+        <span class="flow-step">STEP 1</span>
+        <h3>フォームから申し込む</h3>
+        <p>所要約1分。名前・連絡先と、1on1セッションの希望などを入力するだけです。</p>
+      </div>
+      <div class="flow-card">
+        <span class="flow-step">STEP 2</span>
+        <h3>ご案内メールが届く</h3>
+        <p>会場の詳細やオフィスの入り方など、当日のご案内を申込者だけにお送りします。</p>
+      </div>
+      <div class="flow-card">
+        <span class="flow-step">STEP 3</span>
+        <h3>当日、中野の丸井本社へ</h3>
+        <p>私服・手ぶらでOK。受付でお名前を伝えたら、あとは楽しむだけです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title">よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary><span class="faq-q">Q.</span>就活を始めたばかりでも大丈夫ですか?</summary>
+        <p class="faq-a">大丈夫です。業界研究や自己分析のきっかけにしてもらうことも、この企画の目的のひとつ。「まだ何も決まっていない」人こそ歓迎します。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q.</span>「やりたいこと」が明確じゃなくても参加していいですか?</summary>
+        <p class="faq-a">もちろんです。1on1セッションは「話を聞きたい」スタンスでも選べます。もやもやを言葉にしに来るくらいの気持ちでどうぞ。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q.</span>本当に選考とは関係ないですか?</summary>
+        <p class="faq-a">一切関係ありません。この場での発言や参加の有無が、丸井グループの選考で評価されることはありません。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q.</span>文系・理系や学部は問われますか?</summary>
+        <p class="faq-a">問いません。2028年卒業予定の学生であれば、どなたでもお申し込みいただけます。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q.</span>服装や持ち物はどうすればいいですか?</summary>
+        <p class="faq-a">私服OK・手ぶらOKです。スーツで来る必要はまったくありません。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q.</span>遅刻・途中参加はできますか?</summary>
+        <p class="faq-a">授業やゼミを優先してください。申込フォームの備考欄や、ご案内メールへの返信でご相談いただければ調整します。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="outline">
   <div class="container">
     <p class="section-label">Outline</p>
@@ -640,6 +798,18 @@
       <tr><th>服装・持ち物</th><td>服装自由(私服OK)・手ぶらOK</td></tr>
       <tr><th>備考</th><td>選考とは一切関係ありません。<br>授業やゼミと重なる場合は、遅刻・途中参加もご相談ください。</td></tr>
     </table>
+  </div>
+</section>
+
+<section class="host">
+  <div class="container">
+    <p class="section-label">Organizer</p>
+    <h2 class="section-title">主催について</h2>
+    <div class="host-card">
+      <h3>Social Act Career(ソーシャルアクトキャリア)</h3>
+      <p>「社会課題をキャリアに」をテーマに、社会課題の解決に取り組む企業と学生をつなぐ、ソーシャル企業専門のキャリア支援サービスです。企業紹介・イベント・スタディツアーなどを通じて、「社会課題解決」を仕事にする人を増やすことをめざしています。本イベントは、丸井グループとの共同企画です。</p>
+      <a href="https://socialactcareer.com" target="_blank" rel="noopener">socialactcareer.com →</a>
+    </div>
   </div>
 </section>
 
