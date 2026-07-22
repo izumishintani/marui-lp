@@ -214,6 +214,22 @@
   }
   .case-card p { font-size: 14px; color: #333; }
   .cases-note { font-size: 12px; color: var(--gray); margin-top: 18px; }
+  .case-more { margin-top: 12px; }
+  .case-more summary {
+    list-style: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--red); font-weight: 800; font-size: 13px;
+  }
+  .case-more summary::-webkit-details-marker { display: none; }
+  .case-more summary::before { content: "+"; font-size: 16px; font-weight: 800; line-height: 1; }
+  .case-more[open] summary::before { content: "−"; }
+  .case-detail {
+    margin-top: 10px;
+    background: var(--bg-soft);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 13.5px; color: #333;
+  }
 
   /* ===== Takeaways ===== */
   .takeaways { background: var(--bg-soft); }
@@ -583,48 +599,80 @@
         <span class="case-tag">福祉 × アート × 金融</span>
         <h3>ヘラルボニーエポスカード</h3>
         <p>障害のある作家のアートをまとったクレジットカード。利用額の0.1%が作家たちの活動を支える仕組みで、毎日の買い物を福祉への応援に変えました。ヘラルボニーとの資本業務提携から生まれた事業です。</p>
+        <details class="case-more">
+          <summary>詳しく見る</summary>
+          <div class="case-detail">ヘラルボニーは「異彩を、放て。」を掲げる岩手発のスタートアップで、知的障害のある作家のアートを事業化しています。丸井グループは2021年に資本業務提携を結び、エポスカードを共同で発行。カードには作家の原画があしらわれ、利用額の0.1%がヘラルボニーを通じて作家の活動支援に充てられます。「寄付」ではなく「毎日の決済」で支える仕組みにしたことが、金融の会社ならではのポイントです。</div>
+        </details>
       </div>
       <div class="case-card">
         <span class="case-icon">⚡</span>
         <span class="case-tag">環境 × 電力</span>
         <h3>再生可能エネルギー事業</h3>
         <p>みんな電力との提携で、店舗の電気を風力などの再エネに切り替え。国際イニシアチブ「RE100」にも加盟し、小売の会社が「電気の中身」まで変えにいっています。</p>
+        <details class="case-more">
+          <summary>詳しく見る</summary>
+          <div class="case-detail">2018年に電力ベンチャーのみんな電力と資本業務提携し、新宿マルイ本館を再エネ100%で稼働させたのを皮切りに、店舗の電力切り替えを拡大。グループの建物管理会社みずからが小売電気事業者となり、青森県の風力発電所などから電力を調達しています。国際イニシアチブ「RE100」に加盟し、2030年までにグループ全体で再エネ100%をめざしています(2024年3月時点で71%)。</div>
+        </details>
       </div>
       <div class="case-card">
         <span class="case-icon">👟</span>
         <span class="case-tag">インクルージョン × モノづくり</span>
         <h3>ラクチンきれいシューズ</h3>
         <p>業界標準の靴サイズがカバーしていたのは、成人女性の足の72%。丸井のプライベートブランドは19.5〜27cmの16サイズ展開でカバー率100%を実現し、「サイズで誰も排除しない」モノづくりを事業として成立させました。</p>
+        <details class="case-more">
+          <summary>詳しく見る</summary>
+          <div class="case-detail">従来の婦人靴の標準サイズ(22.5〜24.5cm)がカバーしていたのは、日本人女性の足の72%。残りの28%は「合う靴が売っていない」状態でした。丸井は足の計測データをもとに19.5〜27cmの16サイズ展開を実現し、小柄・大柄な方はもちろん、トランスジェンダーの方にも選ばれる商品に。ビジネスシューズも22.5〜30cmまで展開し、「サイズの壁」を事業の力で取り払った代表例です。</div>
+        </details>
       </div>
       <div class="case-card">
         <span class="case-icon">🏳️‍🌈</span>
         <span class="case-tag">ダイバーシティ × 店舗</span>
         <h3>インクルーシブな店づくり</h3>
         <p>2016年から東京レインボープライドに協賛し、会場では全サイズの試着体験会も実施。性別や障がいの有無を超えて楽しめる店づくりを、会社の方針として掲げ続けています。</p>
+        <details class="case-more">
+          <summary>詳しく見る</summary>
+          <div class="case-detail">2016年に東京レインボープライドへ協賛したのを機に、性別・年齢・障がいの有無を超えた店づくりを本格化。翌年からはイベント会場にブースを出展し、シューズ・パンツ・オーダースーツの全サイズ試着体験会を実施してきました。「すべての人が『しあわせ』を感じられるインクルーシブな社会の実現」というグループのミッションを、売場のレベルで実践している取り組みです。</div>
+        </details>
       </div>
       <div class="case-card">
         <span class="case-icon">📣</span>
         <span class="case-tag">挑戦の応援 × クラファン</span>
         <h3>CAMPFIREとの資本業務提携</h3>
         <p>クラウドファンディング大手CAMPFIREと資本業務提携。「やりたい」に挑戦する個人やスタートアップを、小売×金融の基盤で応援しています。</p>
+        <details class="case-more">
+          <summary>詳しく見る</summary>
+          <div class="case-detail">国内最大級のクラウドファンディング「CAMPFIRE」と資本業務提携。「挑戦したい人が、お金の壁で諦めない」仕組みづくりという点で、創業以来「信用はお客さまと共につくるもの」を掲げてきた丸井の金融思想と重なります。丸井グループはスタートアップへの共創投資を積極的に行っており、本提携はその代表例のひとつです。</div>
+        </details>
       </div>
       <div class="case-card">
         <span class="case-icon">🥕</span>
         <span class="case-tag">一次産業 × 産直</span>
         <h3>ポケットマルシェとの資本業務提携</h3>
         <p>農家・漁師から直接買える産直プラットフォームに出資。生産者の「つくる想い」と消費者を直接つなぐ仕組みを支えています。</p>
+        <details class="case-more">
+          <summary>詳しく見る</summary>
+          <div class="case-detail">「ポケットマルシェ」は、全国の農家・漁師から旬の食材を直接買える産直プラットフォーム。生産者が自分の言葉で商品を語り、消費者と直接やりとりできるのが特徴です。丸井グループは資本業務提携を通じてこの仕組みを支え、一次産業の担い手と都市の消費者をつなぐ「顔の見える食」の共創に参画しています。</div>
+        </details>
       </div>
       <div class="case-card">
         <span class="case-icon">🎬</span>
         <span class="case-tag">「好き」× エンタメ</span>
         <h3>アニメ事業</h3>
         <p>アニメコラボのエポスカードやイベントなど、ファンの「推し」への想いを起点にした事業。「好きが駆動する経済」を体現する領域です。</p>
+        <details class="case-more">
+          <summary>詳しく見る</summary>
+          <div class="case-detail">丸井グループはアニメを成長領域と位置づけ、専門部署を置いて事業を展開しています。人気作品とコラボしたエポスカードの発行、アニメイベントやPOP UP SHOPの開催など、ファンの「推し活」を決済・イベント・店舗の掛け算で支えるビジネスです。「一人ひとりの『好き』が駆動する経済を創る」というインパクト目標を、最もわかりやすく体現する事業と言えます。</div>
+        </details>
       </div>
       <div class="case-card">
         <span class="case-icon">🏬</span>
         <span class="case-tag">小売の再発明</span>
         <h3>売らないお店・D2C支援</h3>
         <p>店舗を「モノを売る場所」から「ブランドとファンが出会う場所」へ。D2C支援の新会社「D2C&amp;Co.」を設立するなど、小売の形そのものを作り変えています。</p>
+        <details class="case-more">
+          <summary>詳しく見る</summary>
+          <div class="case-detail">2020年、D2Cブランドの成長を支援する新会社「D2C&amp;Co.」を設立。店頭では「売らず」に体験と接客に集中してブランドのファンを増やし、購入はオンラインで完結する――という新しい店舗の形をつくっています。丸井の店舗は「モノを売る場」から「ブランドと顧客が出会う場」への転換が進んでおり、店舗の6割以上を体験提供型へ切り替える計画も公表されています。</div>
+        </details>
       </div>
     </div>
     <p class="cases-note">※ 各事業の内容は公開情報に基づく紹介です。こうした事業が「どう生まれたのか」は、当日の企業インプットで深掘りします。</p>
